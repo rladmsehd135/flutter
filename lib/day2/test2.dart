@@ -21,9 +21,24 @@ class MyApp extends StatelessWidget {
             appBar: AppBar(title : Text("계산기")),
             body : Column(
               children: [
+                TextField(
 
+
+                  decoration: InputDecoration(
+                    labelText: "숫자",
+                    hintText: "숫자입력",
+                    prefixIcon: Icon(Icons.calculate),
+                    suffixIcon: Icon(Icons.check_circle, color: Colors.green,),
+                    border : OutlineInputBorder(),
+                    filled: true,
+                    fillColor: Colors.grey[100],
+                    // enabled: false
+                  ),
+                ),
+                SizedBox(height: 10,),
                 Expanded(
                   child: GridView.builder(
+
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 4,
                         mainAxisSpacing: 6,
