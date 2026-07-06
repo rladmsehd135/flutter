@@ -36,6 +36,7 @@ dependencies:
   percent_indicator: ^4.2.5
   confetti: ^0.8.0
   go_router: ^17.3.0
+  sqflite:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
