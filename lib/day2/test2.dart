@@ -9,6 +9,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController numCtrl = TextEditingController();
     List<String> labels = [
       'C', '(', '%', '/',
       '7', '8', '9', '*',
@@ -19,48 +20,50 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         home : Scaffold(
             appBar: AppBar(title : Text("계산기")),
-            body : Column(
-              children: [
-                TextField(
+            body : Padding(
+              padding: const EdgeInsets.all(15),
+              child: Column(
+                children: [
+                  TextField(
+                    controller: numCtrl,
+                    // obscureText: true,
+                    decoration: InputDecoration(
+                      labelText: "숫자",
+                      hintText: "숫자 입력",
+                      prefixIcon: Icon(Icons.calculate),
+                      suffixIcon: Icon(Icons.check_circle, color: Colors.green,),
+                      border : OutlineInputBorder(),
+                      filled: true,
+                      fillColor: Colors.grey[100],
+                      // enabled: false
 
-
-                  decoration: InputDecoration(
-                    labelText: "숫자",
-                    hintText: "숫자입력",
-                    prefixIcon: Icon(Icons.calculate),
-                    suffixIcon: Icon(Icons.check_circle, color: Colors.green,),
-                    border : OutlineInputBorder(),
-                    filled: true,
-                    fillColor: Colors.grey[100],
-                    // enabled: false
-                  ),
-                ),
-                SizedBox(height: 10,),
-                Expanded(
-                  child: GridView.builder(
-
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 4,
-                        mainAxisSpacing: 6,
-                        crossAxisSpacing: 6
                     ),
-                    itemCount: labels.length,
-                    itemBuilder: (context, index) {
-                      return ElevatedButton(
-                          onPressed: (){},
-                          child: Text(labels[index], style:TextStyle(color : Colors.black, fontSize: 30)),
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: (index+1) % 4 == 0 || index < 4 ? Colors.blue[100] : Colors.grey[100],
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.zero
-                              )
-                          )
-                      );
-                    },
                   ),
-
-                )
-              ],
+                  SizedBox(height: 10,),
+                  Expanded(
+                    child: GridView.builder(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 4,
+                          mainAxisSpacing: 6,
+                          crossAxisSpacing: 6
+                      ),
+                      itemCount: labels.length,
+                      itemBuilder: (context, index) {
+                        return ElevatedButton(
+                            onPressed: (){},
+                            child: Text(labels[index], style:TextStyle(color : Colors.black, fontSize: 30)),
+                            style: ElevatedButton.styleFrom(
+                                backgroundColor: (index+1) % 4 == 0 || index < 4 ? Colors.blue[100] : Colors.grey[100],
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.zero
+                                )
+                            )
+                        );
+                      },
+                    ),
+                  )
+                ],
+              ),
             )
         )
     );
