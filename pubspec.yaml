@@ -37,6 +37,8 @@ dependencies:
   confetti: ^0.8.0
   go_router: ^17.3.0
   sqflite:
+  firebase_core:
+  cloud_firestore:
   flutter_slidable: ^4.0.3
 
   # The following adds the Cupertino Icons font to your application.
