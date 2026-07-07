@@ -37,6 +37,7 @@ dependencies:
   confetti: ^0.8.0
   go_router: ^17.3.0
   sqflite:
+  flutter_slidable: ^4.0.3
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
