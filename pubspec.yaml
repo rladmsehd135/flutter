@@ -27,6 +27,11 @@ environment:
 # dependencies can be manually updated by changing the version numbers below to
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
+
+
+dependency_overrides:
+  app_links: 6.3.0
+
 dependencies:
   flutter:
     sdk: flutter
@@ -40,10 +45,21 @@ dependencies:
   firebase_core:
   cloud_firestore:
   flutter_slidable: ^4.0.3
+  image_picker: ^1.2.3
+  portone_flutter: ^1.0.1
+  http: ^1.2.0
+  google_maps_flutter:
+  geolocator:
+  geocoding:
+
+  google_places_flutter:
+
+
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  flutter_dotenv: ^6.0.1
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +79,7 @@ dev_dependencies:
 flutter:
   assets:
     - assets/
+    - .env
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
